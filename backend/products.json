@@ -1,0 +1,213 @@
+[
+  {
+    "image": "/images/Classic-T-Shirt.webp",
+    "name": "Classic T-Shirt",
+    "price": 19.99,
+    "category": "Clothes",
+    "subcategory": "T-Shirts",
+    "color": "black",
+    "differentColor": {
+      "colorImage": "/images/Classic-T-Shirt-Red.jpeg",
+      "colorName": "Classic T-Shirt-Red",
+      "secondColor": "Red"
+    }
+  },
+
+  {
+    "image": "/images/Graphic-T-Shirt.jpeg",
+    "name": "Graphic T-Shirt",
+    "price": 24.99,
+    "category": "Clothes",
+    "subcategory": "T-Shirts",
+    "color": "black",
+    "differentColor": {
+      "colorImage": "/images/Graphic-T-Shirt-Blue.jpeg",
+      "colorName": "Graphic T-Shirt-Blue",
+      "secondColor": "blue"
+    }
+  },
+  {
+    "image": "/images/Slim-Fit-Jeans.jpeg",
+    "name": "Slim Fit Jeans",
+    "price": 49.99,
+    "category": "Clothes",
+    "subcategory": "Jeans",
+    "color": "blue",
+    "differentColor": {
+      "colorImage": "/images/Slim-Fit-Jeans-Dark-Blue.jpeg",
+      "colorName": "Slim Fit Jeans-Dark Blue",
+      "secondColor": "rgb(12, 20, 54)"
+    }
+  },
+  {
+    "image": "/images/Wool-Sweater.jpeg",
+    "name": "Wool Sweater",
+    "price": 39.99,
+    "category": "Clothes",
+    "subcategory": "Sweaters",
+    "color": "rgb(133, 55, 3)",
+    "differentColor": {
+      "colorImage": "/images/Wool-Sweater-Blue.jpeg",
+      "colorName": "Wool Sweater-Blue",
+      "secondColor": "blue"
+    }
+  },
+  {
+    "image": "/images/Winter-Jacket.jpeg",
+    "name": "Winter Jacket",
+    "price": 89.99,
+    "category": "Clothes",
+    "subcategory": "Jackets",
+    "type": "On-Sale",
+    "previusPrice": 105.0
+  },
+
+  {
+    "image": "/images/Casual-Shoes.jpeg",
+    "name": "Casual Shoes",
+    "price": 59.99,
+    "category": "Shoes",
+    "subcategory": "Casual",
+    "color": "black",
+    "differentColor": {
+      "colorImage": "/images/Casual-Shoes-White.jpeg",
+      "colorName": "Casual Shoes-White",
+      "secondColor": "White"  
+     }
+  },
+  {
+    "image": "/images/Running-Shoes.jpeg",
+    "name": "Running Shoes",
+    "price": 79.99,
+    "category": "Shoes",
+    "subcategory": "Running",
+    "color": "blue",
+    "differentColor": {
+      "colorImage": "/images/Running-Shoes-Green.jpeg",
+      "colorName": "Running Shoes-Green",
+      "secondColor": "green"
+    }
+  },
+  {
+    "image": "/images/Formal-Oxford-Shoes.jpeg",
+    "name": "Formal Oxford Shoes",
+    "price": 99.99,
+    "category": "Shoes",
+    "subcategory": "Formal",
+    "color": "black",
+    "differentColor": {
+      "colorImage": "/images/Formal-Oxford-Shoes-Coffee.jpeg",
+      "colorName": "Formal Oxford Shoes-Coffee",
+      "secondColor": "rgb(133, 55, 3)"
+    }
+  },
+  {
+    "image": "/images/Beach-Sandals.jpeg",
+    "name": "Beach Sandals",
+    "price": 29.99,
+    "category": "Shoes",
+    "subcategory": "Sandals"
+  },
+
+  {
+    "image": "/images/Wooden-Chair.jpeg",
+    "name": "Wooden Chair",
+    "price": 39.99,
+    "category": "Furniture",
+    "subcategory": "Chairs"
+  },
+  {
+    "image": "/images/Comfortable-Couch.jpeg",
+    "name": "Comfortable Couch",
+    "price": 499.99,
+    "category": "Furniture",
+    "subcategory": "Couch",
+    "type": "On-Sale",
+    "previusPrice": 650.0
+  },
+  {
+    "image": "/images/Dining-Table.jpeg",
+    "name": "Dining Table",
+    "price": 299.99,
+    "category": "Furniture",
+    "subcategory": "Tables"
+  },
+  {
+    "image": "/images/Queen-Bed.jpeg",
+    "name": "Queen Bed",
+    "price": 399.99,
+    "category": "Furniture",
+    "subcategory": "Beds",
+    "type": "On-Sale",
+    "previusPrice": 449.99
+  },
+
+  {
+    "image": "/images/Smart-TV.jpeg",
+    "name": "Smart TV",
+    "price": 699.99,
+    "category": "Tech",
+    "subcategory": "TV"
+  },
+  {
+    "image": "/images/Gaming-Console.jpeg",
+    "name": "Gaming Console",
+    "price": 399.99,
+    "category": "Tech",
+    "subcategory": "Game-Consoles"
+  },
+  {
+    "image": "/images/Gaming-Laptop.jpeg",
+    "name": "Gaming Laptop",
+    "price": 1299.99,
+    "category": "Tech",
+    "subcategory": "Laptops"
+  },
+  {
+    "image": "/images/Smartphone-Pro.jpeg",
+    "name": "Smartphone Pro",
+    "price": 899.99,
+    "category": "Tech",
+    "subcategory": "Phones"
+  },
+
+  {
+    "image": "/images/Espresso-Machine.jpeg",
+    "name": "Espresso Machine",
+    "price": 129.99,
+    "category": "Appliance",
+    "subcategory": "Coffee-Machines",
+    "type": "On-Sale",
+    "previusPrice": 155.0
+  },
+  {
+    "image": "/images/Robot-Vacuum.jpeg",
+    "name": "Robot Vacuum",
+    "price": 299.99,
+    "category": "Appliance",
+    "subcategory": "Vacuum-Cleaners"
+  },
+  {
+    "image": "/images/Mini-Fridge.jpeg",
+    "name": "Mini Fridge",
+    "price": 199.99,
+    "category": "Appliance",
+    "subcategory": "Fridges"
+  },
+  {
+    "image": "/images/Microwave-Oven.jpeg",
+    "name": "Microwave Oven",
+    "price": 149.99,
+    "category": "Appliance",
+    "subcategory": "Microwaves",
+    "type": "On-Sale",
+    "previusPrice": 189.99
+  },
+  {
+    "image": "/images/Washing-Machine.jpeg",
+    "name": "Washing Machine",
+    "price": 239.99,
+    "category": "Appliance",
+    "subcategory": "Washing-Machines"
+  }
+]

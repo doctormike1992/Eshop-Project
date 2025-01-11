@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cart</title>
+    <link rel="stylesheet" href="/css/cart.css" />
+    <script
+      src="https://kit.fontawesome.com/9a7d107c7e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!----------Header-------------->
+    <header id="head">
+      <h1>Eshop</h1>
+      <div id="menu">
+        <ul>
+          <li><a href="eshop.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+        </ul>
+      </div>
+    </header>
+    <!----------Products-------------->
+    <div class="products">
+      <div id="items"></div>
+    <!----------Costs Div-------------->
+      <div class="Check">
+        <h2 class="totalHeader">Total Cost</h2>
+        <div class="checkDiv">
+          <p>Cost</p>
+          <p class="cost"></p>
+        </div>
+        <div class="checkDiv">
+          <p>Tax</p>
+          <p class="tax"></p>
+        </div>
+        <div class="checkDiv">
+          <p class="totalP">Total</p>
+          <p class="total"></p>
+        </div>
+      <div class="checkDiv">
+        <button class="purchase">Purchase</button>
+      </div>
+      </div>
+    </div>
+    <!----------Footer-------------->
+    <footer>
+      <div class="contact">
+        <p>Contact us</p>
+        <p>Policy</p>
+        <p>Our stores</p>
+        <p>Our history</p>
+      </div>
+      <div class="media">
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-x-twitter"></i></span>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/cart.js"></script>
+  </body>
+</html>

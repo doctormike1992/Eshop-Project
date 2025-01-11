@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eshop</title>
+    <!----------Icons-------------->
+    <script
+      src="https://kit.fontawesome.com/9a7d107c7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!----------CSS-------------->
+    <link rel="stylesheet" href="/css/eshop.css" />
+  </head>
+  <body>
+    <div class="wrapper"> 
+       <header id="head">
+     
+      <!----------Categories button - Dropdown categories & subcategories-------------->
+      <div id="categories">
+        <!----------Categories button-------------->
+        <button class="barMenu">
+          <i class="fa-solid fa-bars" id="bar"></i>
+        </button>
+        <h1>Eshop</h1>
+        <!---------- Dropdown categories & subcategories-------------->
+        <nav id="sidebar" class="dropdown">
+          <ul class="semiclass">
+            <li>
+              <!----------Dropdown categories-------------->
+              <a class="category" data-category="Clothes">Clothes</a>
+              <div class="semiA">
+                <!----------subcategories-------------->
+                <a data-category="T-Shirts">t-shirts</a>
+                <a data-category="Jeans">jeans</a>
+                <a data-category="Sweaters">sweaters</a>
+                <a data-category="Jackets">jackets</a>
+              </div>
+            </li>
+
+            <li>
+              <!----------Dropdown categories-------------->
+              <a class="category" data-category="Shoes">Shoes</a>
+              <div class="semiB">
+                <!----------subcategories-------------->
+                <a data-category="Casual">Casual</a>
+                <a data-category="Running">Running</a>
+                <a data-category="Formal">Formal</a>
+                <a data-category="Sandals">Sandals</a>
+              </div>
+            </li>
+
+            <li>
+              <!----------Dropdown categories-------------->
+              <a class="category" data-category="Furniture">Furniture</a>
+              <div class="semiC">
+                <!----------subcategories-------------->
+                <a data-category="Chairs">Chairs</a>
+                <a data-category="Couch">Couch</a>
+                <a data-category="Tables">Tables</a>
+                <a data-category="Beds">Beds</a>
+              </div>
+            </li>
+
+            <li>
+              <!---------- Dropdown categories -------------->
+              <a class="category" data-category="Tech">Tech</a>
+              <div class="semiD">
+                <!----------subcategories-------------->
+                <a data-category="TV">TV</a>
+                <a data-category="Game-Consoles">Game Consoles</a>
+                <a data-category="Laptops">Laptops</a>
+                <a data-category="Phones">Phones</a>
+              </div>
+            </li>
+
+            <li>
+              <!---------- Dropdown categories -------------->
+              <a class="category" data-category="Appliance">Appliance</a>
+              <div class="semiE">
+                <!----------subcategories-------------->
+                <a data-category="Coffee-Machines">Coffee Machines</a>
+                <a data-category="Vacuum-Cleaners">Vacuum Cleaners</a>
+                <a data-category="Fridges">Fridges</a>
+                <a data-category="Washing-Machines">Washing Machines</a>
+                <a data-category="Microwaves">Microwaves</a>
+              </div>
+            </li>
+            <li id="On-Sale">
+              <a class="category" data-category="On-Sale">On Sale</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+       
+      <!----------Input search-------------->
+      <div id="search">
+        <input type="search" id="search" placeholder="search" />
+        <i class="fa-solid fa-magnifying-glass" id="glass"></i>
+      </div>
+
+      <!----------Menu-------------->
+      <div id="menu">
+        <ul>
+          <li><a href="eshop.html">Home</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+        </ul>
+      </div>
+    </header>
+    <!----------Products conatiner-------------->
+    <div class="products"></div>
+    <!----------Cart icon-------------->
+    <div class="cart">
+      <span class="cartIcon"><i class="fa-solid fa-cart-shopping"></i></span>
+      <span class="cartQuantity"></span>
+    </div>
+
+    <!----------Footer-------------->
+    <footer>
+      <div class="contact">
+        <p>Contact us</p>
+        <p>Policy</p>
+        <p>Our stores</p>
+        <p>Our history</p>
+      </div>
+      <div class="media">
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-x-twitter"></i></span>
+      </div>
+    </footer>
+    </div>
+   
+    <!----------Script-------------->
+    <script type="module" src="/js/eshop.js"></script>
+  </body>
+</html>
