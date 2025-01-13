@@ -189,13 +189,12 @@ function checkoutButton() {
       } else {
         orders.push({ ...cartItem });
       }
-      saveOrders();
-      clearCart();
-      Cost();
-      totalPlusTax();
-      tax();
     });
-
+    saveOrders();
+    clearCart();
+    Cost();
+    totalPlusTax();
+    tax();
     const container = document.getElementById("items");
     container.innerHTML = "Thank you for your Purchase";
     container.style.color = "green";
