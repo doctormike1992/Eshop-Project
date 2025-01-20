@@ -22,21 +22,13 @@ function showCategories() {
   menuBar.addEventListener("click", () => {
     if (hiddenMenu.classList.contains("show")) {
       hiddenMenu.classList.remove("show");
-      setTimeout(() => {
-        hiddenMenu.style.display = "none";
-      }, 200);
+      hiddenMenu.style = "display: none";
     } else {
-      hiddenMenu.style.display = "flex";
-      setTimeout(() => {
-        hiddenMenu.classList.add("show");
-      }, 10);
+      hiddenMenu.classList.add("show");
+      hiddenMenu.style = "display:flex";
     }
   });
-
-  document.body.addEventListener("click", () => {
-    hiddenMenu.classList.remove("show");
-  });
-}
+};
 
 /*===========================Display all products when page loads===========================*/
 
@@ -48,15 +40,16 @@ export function displayAll() {
   alphaBet.forEach((product) => {
     renderProducts(product);
   });
-};
+}
 
 let selectedCategory = null;
 /*===========================Display products based on category-subcategory it was chosen===========================*/
 function categorySearch() {
-  const categoryContainer = document.querySelector(".semiclass");
+  const categoryContainer = document.querySelector(".dropdown");
 
   categoryContainer.addEventListener("click", (event) => {
-    const clickedA = event.target;
+    const clickedA = event.target.closest(".category");
+    if (!clickedA) return;
     selectedCategory = clickedA.getAttribute("data-category");
     productsContainer.innerHTML = "";
 

@@ -13,127 +13,146 @@
     <link rel="stylesheet" href="/css/eshop.css" />
   </head>
   <body>
-    <div class="wrapper"> 
-       <header id="head">
-     
-      <!----------Categories button - Dropdown categories & subcategories-------------->
-      <div id="categories">
-        <!----------Categories button-------------->
-        <button class="barMenu">
-          <i class="fa-solid fa-bars" id="bar"></i>
-        </button>
-        <a href="index.html">
-           <h1>Eshop</h1>
-        </a>
-        <!---------- Dropdown categories & subcategories-------------->
-        <nav id="sidebar" class="dropdown">
-          <ul class="semiclass">
-            <li>
-              <!----------Dropdown categories-------------->
-              <a class="category" data-category="Clothes">Clothes</a>
-              <div class="semiA">
-                <!----------subcategories-------------->
-                <a data-category="T-Shirts">t-shirts</a>
-                <a data-category="Jeans">jeans</a>
-                <a data-category="Sweaters">sweaters</a>
-                <a data-category="Jackets">jackets</a>
-              </div>
+    <div class="wrapper">
+      <header id="head">
+        <!----------Categories button - Dropdown categories & subcategories-------------->
+        <!-- Eshop name -->
+        <div class="shopLogo">
+          <a href="index.html">
+            <h1>E-<i class="fa-brands fa-shopify fa-bounce"></i>hop</h1>
+          </a>
+        </div>
+        <div id="inputDiv">
+          <!----------Categories button-------------->
+          <button class="barMenu">
+            <i class="fa-solid fa-bars" id="bar"></i>
+          </button>
+          <!----------Input search-------------->
+          <div id="search">
+            <input type="search" id="search" placeholder="search..." />
+          </div>
+        </div>
+        <!----------Menu-------------->
+        <div id="menu">
+           <div class="phone-numbers">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <p>210-7741234</p>
+            <p>210-7744321</p>
+          </div>
+        </div>
+          <ul>
+            <li><a href="index.html"><i class="fa-regular fa-heart"></i><p>faforites</p></a>
+            <span class="span">favorites</span>
             </li>
-
-            <li>
-              <!----------Dropdown categories-------------->
-              <a class="category" data-category="Shoes">Shoes</a>
-              <div class="semiB">
-                <!----------subcategories-------------->
-                <a data-category="Casual">Casual</a>
-                <a data-category="Running">Running</a>
-                <a data-category="Formal">Formal</a>
-                <a data-category="Sandals">Sandals</a>
-              </div>
+            
+            <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i><p>cart</p></a>
+            <span class="span">cart</span>
             </li>
-
-            <li>
-              <!----------Dropdown categories-------------->
-              <a class="category" data-category="Furniture">Furniture</a>
-              <div class="semiC">
-                <!----------subcategories-------------->
-                <a data-category="Chairs">Chairs</a>
-                <a data-category="Couch">Couch</a>
-                <a data-category="Tables">Tables</a>
-                <a data-category="Beds">Beds</a>
-              </div>
+ 
+            <li><a href="orders.html"><i class="fa-solid fa-truck"></i><p>orders</p></a>
+             <span class="span">favorite</span>
             </li>
-
-            <li>
-              <!---------- Dropdown categories -------------->
-              <a class="category" data-category="Tech">Tech</a>
-              <div class="semiD">
-                <!----------subcategories-------------->
-                <a data-category="TV">TV</a>
-                <a data-category="Game-Consoles">Game Consoles</a>
-                <a data-category="Laptops">Laptops</a>
-                <a data-category="Phones">Phones</a>
-              </div>
-            </li>
-
-            <li>
-              <!---------- Dropdown categories -------------->
-              <a class="category" data-category="Appliance">Appliance</a>
-              <div class="semiE">
-                <!----------subcategories-------------->
-                <a data-category="Coffee-Machines">Coffee Machines</a>
-                <a data-category="Vacuum-Cleaners">Vacuum Cleaners</a>
-                <a data-category="Fridges">Fridges</a>
-                <a data-category="Washing-Machines">Washing Machines</a>
-                <a data-category="Microwaves">Microwaves</a>
-              </div>
-            </li>
-            <li id="On-Sale">
-              <a class="category" data-category="On-Sale">On Sale</a>
-            </li>
+           
           </ul>
-        </nav>
-      </div>
-       
-      <!----------Input search-------------->
-      <div id="search">
-        <input type="search" id="search" placeholder="search..." />
-    
-      </div>
+        </div>
+      </header>
+      
+        <nav>
+        <div class="dropdown">
+          <ul class="main-menu">
+            <li><a class="category clothes" data-category="Clothes"><i class="fa-solid fa-shirt"></i>
+              <p>Clothes</p><p>></p></a>
+            <div class="sub-menu sub-clothes">
+              <ul>
+                 <li><a class="category" data-category="T-Shirts">t-shirts</a></li>
+                <li><a class="category" data-category="Jeans">jeans</a></li>
+                <li><a class="category" data-category="Sweaters">sweaters</a> </li>
+                <li><a class="category" data-category="Jackets">jackets</a></li>
+              </ul>
+            </div>
+          </li>
 
-      <!----------Menu-------------->
-      <div id="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="orders.html">My Orders</a></li>
-        </ul>
-      </div>
-    </header>
-    <!----------Products conatiner-------------->
-    <div class="products"></div>
-    <!----------Cart icon-------------->
-    <a href="cart.html" class="cart">
-      <span class="cartIcon"><i class="fa-solid fa-cart-shopping"></i></span>
-      <span class="cartQuantity"></span>
-    </a>
+            <li><a class="category shoes" data-category="Shoes"><i class="fa-solid fa-shoe-prints"></i>
+              <p>Shoes</p><p>></p> </a>
+             <div class="sub-menu sub-shoes">
+              <ul>
+                 <li><a class="category" data-category="Casual">Casual</a></li>
+                <li><a class="category" data-category="Running">Running</a></li>
+                <li><a class="category" data-category="Formal">Formal</a> </li>
+                <li><a class="category" data-category="Sandals">Sandals</a></li>
+              </ul>
+            </div>
+            </li>
 
-    <!----------Footer-------------->
-    <footer>
-      <div class="contact">
-        <p>Contact us</p>
-        <p>Policy</p>
-        <p>Our stores</p>
-        <p>Our history</p>
-      </div>
-      <div class="media">
-        <span><i class="fa-brands fa-facebook"></i></span>
-        <span><i class="fa-brands fa-instagram"></i></span>
-        <span><i class="fa-brands fa-x-twitter"></i></span>
-      </div>
-    </footer>
+            <li><a class="category furniture" data-category="Furniture"><i class="fa-solid fa-couch"></i>
+              <p>Furniture</p><p>></p> </a>
+              <div class="sub-menu sub-furniture">
+              <ul>
+                 <li><a class="category" data-category="Chairs">Chairs</a></li>
+                <li><a class="category" data-category="Couch">Couch</a></li>
+                <li><a class="category" data-category="Tables">Tables</a> </li>
+                <li><a class="category" data-category="Beds">Beds</a></li>
+              </ul>
+            </div>
+            </li>
+            
+            <li><a class="category tech" data-category="Tech"><i class="fa-solid fa-microchip"></i>
+              <p>Tech</p><p>></p></a>
+               <div class="sub-menu sub-tech">
+              <ul>
+                 <li><a class="category" data-category="TV">TV</a></li>
+                <li><a class="category" data-category="Game-Consoles">Game-Consoles</a></li>
+                <li><a class="category" data-category="Laptops">Laptops</a> </li>
+                <li><a class="category" data-category="Phones">Phones</a></li>
+              </ul>
+            </div>
+            </li>
+
+            <li><a class="category appliance" data-category="Appliance"><i class="fa-solid fa-blender-phone"></i>
+              <p>Appliance</p><p>></p></a>
+              
+               <div class="sub-menu sub-appliance">
+              <ul>
+                 <li><a class="category" data-category="Coffee-Machines">Coffee-Machines</a></li>
+                <li><a class="category" data-category="Vacuum-Cleaners">Vacuum-Cleaners</a></li>
+                <li><a class="category" data-category="Fridges">Fridges</a> </li>
+                <li><a class="category" data-category="Washing-Machines">Washing-Machines</a></li>
+                <li><a class="category" data-category="Microwaves">Microwaves</a></li>
+              </ul>
+            </div>
+            </li>
+
+            <li><a class="category" data-category="On-Sale"><i class="fa-solid fa-percent"></i>
+              <p>On sale</p><p></p></a></li>
+          </ul>
+          </div>
+          </nav>
+            
+      <!----------Products conatiner-------------->
+      <div class="products"></div>
+      <!----------Cart icon-------------->
+      <a href="cart.html" class="cart">
+        <span class="cartIcon"><i class="fa-solid fa-basket-shopping"></i></i></span>
+        <span class="cartQuantity"></span>
+      </a>
+
+      <!----------Footer-------------->
+      <footer>
+        <div class="contact">
+          <p>Contact us</p>
+          <p>Policy</p>
+          <p>Our stores</p>
+          <p>Our history</p>
+        </div>
+        <div class="media">
+          <span><i class="fa-brands fa-facebook"></i></span>
+          <span><i class="fa-brands fa-instagram"></i></span>
+          <span><i class="fa-brands fa-x-twitter"></i></span>
+        </div>
+      </footer>
     </div>
-   
+
     <!----------Script-------------->
     <script type="module" src="/js/eshop.js"></script>
   </body>
