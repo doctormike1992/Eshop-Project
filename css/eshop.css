@@ -677,7 +677,7 @@ nav li:hover .sub-menu{
 .cart {
   position: fixed;
   bottom: 10%;
-  right: 6%;
+  right: 3%;
   border: 3px solid #FF6A00;
   border-radius: 50px;
   padding: 12px 6px;
