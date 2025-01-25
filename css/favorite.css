@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -380,6 +379,16 @@ nav li:hover .sub-menu{
 
 }
 }
+/* TITLE */
+.title{
+  margin-top: 3rem;
+}
+.title h3{
+  font-family: 'Roboto';
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #1A1A1A;
+  }
 /*======PRODUCTS=======*/
 
 .products {
@@ -402,7 +411,7 @@ nav li:hover .sub-menu{
   justify-content: center;
   height: 500px;
   width: 340px;
-  border: 1px solid rgba(128, 128, 128, 0.082);
+  border: 1px solid rgba(128, 128, 128, 0.096);
   background-color: white;
 }
 .favoriteDiv{
@@ -420,7 +429,7 @@ nav li:hover .sub-menu{
   color:gray;
   cursor: pointer;
 }
-.isFavorite{
+.favoriteButton:hover{
   color: #FF6A00;
 }
 .salesDiv{

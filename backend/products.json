@@ -27,14 +27,14 @@
     }
   },
   {
-    "image": "/images/Slim-Fit-Jeans.jpeg",
+    "image": "/images/Slim-Fit-Jeans.jpg",
     "name": "Slim Fit Jeans",
     "price": 49.99,
     "category": "Clothes",
     "subcategory": "Jeans",
     "color": "blue",
     "differentColor": {
-      "colorImage": "/images/Slim-Fit-Jeans-Dark-Blue.jpeg",
+      "colorImage": "/images/Slim-Fit-Jeans-Dark-Blue.webp",
       "colorName": "Slim Fit Jeans-Dark Blue",
       "secondColor": "rgb(12, 20, 54)"
     }
@@ -70,10 +70,10 @@
     "subcategory": "Casual",
     "color": "black",
     "differentColor": {
-      "colorImage": "/images/Casual-Shoes-White.jpeg",
+      "colorImage": "/images/Casual-Shoes-White.webp",
       "colorName": "Casual Shoes-White",
-      "secondColor": "White"  
-     }
+      "secondColor": "White"
+    }
   },
   {
     "image": "/images/Running-Shoes.jpeg",
@@ -102,11 +102,12 @@
     }
   },
   {
-    "image": "/images/Beach-Sandals.jpeg",
+    "image": "/images/Beach-Sandals.webp",
     "name": "Beach Sandals",
     "price": 29.99,
     "category": "Shoes",
-    "subcategory": "Sandals"
+    "subcategory": "Sandals",
+    "type": "Best-Seller"
   },
 
   {
@@ -126,11 +127,12 @@
     "previusPrice": 650.0
   },
   {
-    "image": "/images/Dining-Table.jpeg",
+    "image": "/images/Dining-Table.webp",
     "name": "Dining Table",
     "price": 299.99,
     "category": "Furniture",
-    "subcategory": "Tables"
+    "subcategory": "Tables",
+    "type": "Best-Seller"
   },
   {
     "image": "/images/Queen-Bed.jpeg",
@@ -147,7 +149,8 @@
     "name": "Smart TV",
     "price": 699.99,
     "category": "Tech",
-    "subcategory": "TV"
+    "subcategory": "TV",
+    "type": "Best-Seller"
   },
   {
     "image": "/images/Gaming-Console.jpeg",
@@ -157,18 +160,19 @@
     "subcategory": "Game-Consoles"
   },
   {
-    "image": "/images/Gaming-Laptop.jpeg",
+    "image": "/images/Gaming-Laptop.jpg",
     "name": "Gaming Laptop",
     "price": 1299.99,
     "category": "Tech",
     "subcategory": "Laptops"
   },
   {
-    "image": "/images/Smartphone-Pro.jpeg",
+    "image": "/images/Smartphone-Pro.jpg",
     "name": "Smartphone Pro",
     "price": 899.99,
     "category": "Tech",
-    "subcategory": "Phones"
+    "subcategory": "Phones",
+    "type": "Best-Seller"
   },
 
   {
@@ -181,7 +185,7 @@
     "previusPrice": 155.0
   },
   {
-    "image": "/images/Robot-Vacuum.jpeg",
+    "image": "/images/Robot-Vacuum.jpg",
     "name": "Robot Vacuum",
     "price": 299.99,
     "category": "Appliance",
@@ -192,7 +196,8 @@
     "name": "Mini Fridge",
     "price": 199.99,
     "category": "Appliance",
-    "subcategory": "Fridges"
+    "subcategory": "Fridges",
+    "type": "Best-Seller"
   },
   {
     "image": "/images/Microwave-Oven.jpeg",
@@ -208,6 +213,7 @@
     "name": "Washing Machine",
     "price": 239.99,
     "category": "Appliance",
-    "subcategory": "Washing-Machines"
+    "subcategory": "Washing-Machines",
+    "type": "Best-Seller"
   }
 ]

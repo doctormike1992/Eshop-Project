@@ -81,7 +81,7 @@ export class MoreColors extends Products {
 
     return colorsContainer;
   }
-};
+}
 
 export class OnSale extends Products {
   type;
@@ -94,35 +94,114 @@ export class OnSale extends Products {
   }
 
   showOnSale() {
-    return `<p class="saleMessage">On Sale</p>
-           <p class="previusPrice">$${this.previusPrice.toFixed(2)}</p>`;
+    return `<p class="saleMessage">ON SALE</p>`;
+  }
+  showPreviusPrice() {
+    return `<p class="previusPrice">$${this.previusPrice.toFixed(2)}</p>`;
+  }
+}
+export class BestSeller extends Products {
+  type;
+
+  constructor(productDetails) {
+    super(productDetails);
+    this.type = productDetails.type;
+  }
+
+  showBestSeller() {
+    return `<p class="bestSellerMessage">BEST SELLER</p>`;
   }
 }
 /*===========================Fetching the data from the Backend===========================*/
-export let products = [];
+// export let products = [];
+// export function loadFromBackend() {
+//   try {
+//     fetch("../backend/products.json")
+//       .then((response) => {
+//         return response.json();
+//       })
+//       .then((productInfo) => {
+//         products = productInfo.map((productDetails) => {
+//           if (productDetails.type === "On-Sale") {
+//             return new OnSale(productDetails);
+//           }
+//           if (productDetails.type === "Best-Seller") {
+//             return new BestSeller(productDetails);
+//           }
+//           const hasColors = "color" in productDetails;
+//           if (hasColors) {
+//             return new MoreColors(productDetails);
+//           } else {
+//             return new Products(productDetails);
+//           }
+//         });
+//       })
+//       .then(() => {
+//         displayAll();
+//       });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+export let products = []; // Keep the same reference to the array
+
 export function loadFromBackend() {
-  try {
-    fetch("../backend/products.json")
-      .then((response) => {
-        return response.json();
-      })
-      .then((productInfo) => {
-        products = productInfo.map((productDetails) => {
-          if (productDetails.type === "On-Sale") {
-            return new OnSale(productDetails);
-          }
-          const hasColors = "color" in productDetails;
-          if (hasColors) {
-            return new MoreColors(productDetails);
-          } else {
-            return new Products(productDetails);
-          }
-        });
-      })
-      .then(() => {
-        displayAll();
+  fetch("../backend/products.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch products data");
+      }
+      return response.json();
+    })
+    .then((productInfo) => {
+      // Populate the products array without overwriting it
+      productInfo.forEach((productDetails) => {
+        if (productDetails.type === "On-Sale") {
+          products.push(new OnSale(productDetails));
+        } else if (productDetails.type === "Best-Seller") {
+          products.push(new BestSeller(productDetails));
+        } else if ("color" in productDetails) {
+          products.push(new MoreColors(productDetails));
+        } else {
+          products.push(new Products(productDetails));
+        }
       });
-  } catch (error) {
-    console.log(error);
-  }
+    })
+    .then(() => {
+      displayAll();
+    })
+    .catch((error) => {
+      console.log("Error loading products:" + error);
+    });
+}
+
+export function loadFromBackend2() {
+  fetch("../backend/products.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch products data");
+      }
+      return response.json();
+    })
+    .then((productInfo) => {
+      // Populate the products array without overwriting it
+      productInfo.forEach((productDetails) => {
+        if (productDetails.type === "On-Sale") {
+          products.push(new OnSale(productDetails));
+        } else if (productDetails.type === "Best-Seller") {
+          products.push(new BestSeller(productDetails));
+        } else if ("color" in productDetails) {
+          products.push(new MoreColors(productDetails));
+        } else {
+          products.push(new Products(productDetails));
+        }
+      });
+    })
+    .then(() => {
+      displayFavorite();
+    })
+    .catch((error) => {
+      console.log("Error loading products:" + error);
+    });
 }

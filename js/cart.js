@@ -3,86 +3,95 @@ import { orders, saveOrders } from "./ordersStorage.js";
 
 checkoutButton();
 displayCart();
-Cost();
-totalPlusTax();
-tax();
+totalAmount();
 
 /*===========================Display the Cart===========================*/
 function displayCart() {
-  if (cart.length === 0) {
-    const container = document.getElementById("items");
-    container.innerHTML = "Your cart is empty";
-    container.style.color = "red";
-    return;
-  }
   cart.forEach((product) => {
     renderCart(product);
   });
 }
 /*===========================elete button===========================*/
 function renderCart(product) {
-  const container = document.getElementById("items");
+  const cartContainer = document.querySelector(".products");
+
+  const container = document.createElement("div");
   const cartDiv = document.createElement("div");
+  const priceDiv = document.createElement("div");
+  const quantityDiv = document.createElement("div");
+  const taxDiv = document.createElement("div");
+  const totalDiv = document.createElement("div");
+  const deleteCartButton = document.createElement("button");
   const cartImage = document.createElement("img");
-  const cartName = document.createElement("p");
+  const cartName = document.createElement("h3");
+  const cartPrevPrice = document.createElement("p");
   const cartPrice = document.createElement("p");
   const cartMinus = document.createElement("button");
-  const cartNum = document.createElement("span");
+  const cartNum = document.createElement("p");
   const cartPlus = document.createElement("button");
-  const cartSelector = document.createElement("div");
-  const cartChange = document.createElement("button");
-  const cartDelete = document.createElement("button");
-  const cartSave = document.createElement("button");
-  const imageContainer = document.createElement("div");
-  const cartExtra = document.createElement("div");
+  const cartTax = document.createElement("p");
+  const cartTotal = document.createElement("p");
 
   cartImage.src = product.image;
+  deleteCartButton.innerHTML = `<i class="fa-solid fa-x"></i>`;
   cartName.textContent = product.name;
-  cartPrice.textContent = `${product.quantity} x $${product.price.toFixed(2)}`;
-  cartMinus.textContent = "-";
+  cartPrice.textContent = `$${product.price.toFixed(2)}`;
+  cartMinus.innerHTML = '<i class="fa-solid fa-minus"></i>';
   cartNum.textContent = `${product.quantity}`;
-  cartPlus.textContent = "+";
-  cartChange.textContent = "Change";
-  cartDelete.textContent = "Delete";
-  cartSave.textContent = "Save";
+  cartPlus.innerHTML = '<i class="fa-solid fa-plus"></i>';
+  if (product.previusPrice) {
+    cartPrevPrice.textContent = `$${product.previusPrice.toFixed(2)}`;
+  }
+  cartTax.textContent = "10%";
+  cartTotal.textContent = `$${(product.price * product.quantity * 1.1).toFixed(
+    2
+  )}`;
 
+  container.classList.add("productContainer");
   cartImage.classList.add("image");
   cartName.classList.add("name");
+  deleteCartButton.classList.add("deleteButton");
   cartPrice.classList.add("price");
   cartDiv.classList.add("productDiv");
-  cartSelector.classList.add("quantitySelector");
   cartMinus.classList.add("quantityMinus");
   cartNum.classList.add("quantityNum");
   cartPlus.classList.add("quantityPlus");
-  cartDelete.classList.add("deleteItem");
-  cartChange.classList.add("changeQuantity");
-  cartSave.classList.add("saveQuantity");
-  imageContainer.classList.add("imageContainer");
-  cartExtra.classList.add("cartExtra");
+  priceDiv.classList.add("priceDiv");
+  quantityDiv.classList.add("quantityDiv");
+  taxDiv.classList.add("taxDiv");
+  cartPrevPrice.classList.add("prevPrice");
+  cartTax.classList.add("tax");
+  totalDiv.classList.add("totalDiv");
+  cartTotal.classList.add("total");
 
-  cartDiv.appendChild(imageContainer);
-  imageContainer.appendChild(cartImage);
-  cartSelector.appendChild(cartMinus);
-  cartSelector.appendChild(cartNum);
-  cartSelector.appendChild(cartPlus);
+  cartDiv.appendChild(deleteCartButton);
+  cartDiv.appendChild(cartImage);
+  cartDiv.appendChild(cartName);
+  taxDiv.appendChild(cartTax);
+  if (product.previusPrice) {
+    priceDiv.appendChild(cartPrevPrice);
+  }
+
+  priceDiv.appendChild(cartPrice);
+  quantityDiv.appendChild(cartMinus);
+  quantityDiv.appendChild(cartNum);
+  quantityDiv.appendChild(cartPlus);
+  totalDiv.appendChild(cartTotal);
   container.appendChild(cartDiv);
-  cartDiv.appendChild(cartExtra);
-  cartExtra.appendChild(cartName);
-  cartExtra.appendChild(cartPrice);
-  cartExtra.appendChild(cartChange);
-  cartExtra.appendChild(cartSave);
-  cartExtra.appendChild(cartSelector);
-  cartExtra.appendChild(cartDelete);
+  container.appendChild(priceDiv);
+  container.appendChild(quantityDiv);
+  container.appendChild(taxDiv);
+  container.appendChild(totalDiv);
 
-  deleteButton(cartDelete, product, container);
-  Plus(cartPlus, cartNum);
-  Minus(cartMinus, cartNum);
-  changeQuantity(cartSave, product, cartNum, container);
-  changeButton(cartChange, cartSelector, cartSave);
+  cartContainer.appendChild(container);
+
+  deleteButton(deleteCartButton, product, cartContainer);
+  Plus(cartPlus, cartNum, cartContainer, product);
+  Minus(cartMinus, cartNum, cartContainer, product);
 }
 /*===========================Delete button===========================*/
-function deleteButton(cartDelete, product, container) {
-  cartDelete.addEventListener("click", () => {
+function deleteButton(deleteCartButton, product, cartContainer) {
+  deleteCartButton.addEventListener("click", () => {
     let newCart = [];
     newCart = cart.filter((item) => {
       return item.name !== product.name;
@@ -90,98 +99,68 @@ function deleteButton(cartDelete, product, container) {
     cart.length = 0;
     cart.push(...newCart);
     saveStorage();
-    container.innerHTML = "";
+    cartContainer.innerHTML = "";
     displayCart();
-    Cost();
-    totalPlusTax();
-    tax();
+    totalAmount();
   });
 }
 /*===========================Quantity buttons===========================*/
 
-function Plus(cartPlus, cartNum) {
+function Plus(cartPlus, cartNum, cartContainer, product) {
   cartPlus.addEventListener("click", () => {
     let quantityNumber = Number(cartNum.textContent);
-    if (cartNum.textContent >= 10) {
+    if (cartNum.textContent >= 99) {
       return;
     } else {
       cartNum.textContent = quantityNumber + 1;
+      product.quantity = Number(cartNum.textContent);
+      saveStorage();
+      cartContainer.innerHTML = "";
+      displayCart();
+      totalAmount();
     }
   });
 }
-function Minus(cartMinus, cartNum) {
+function Minus(cartMinus, cartNum, cartContainer, product) {
   cartMinus.addEventListener("click", () => {
     let quantityNumber = Number(cartNum.textContent);
     if (quantityNumber <= 1) {
       return;
     } else {
       cartNum.textContent = quantityNumber - 1;
+      product.quantity = Number(cartNum.textContent);
+      saveStorage();
+      cartContainer.innerHTML = "";
+      displayCart();
+      totalAmount();
     }
   });
 }
-/*===========================Quantity change and save===========================*/
 
-function changeQuantity(cartSave, product, cartNum, container) {
-  cartSave.addEventListener("click", () => {
-    product.quantity = Number(cartNum.textContent);
-    saveStorage();
-    container.innerHTML = "";
-    displayCart();
-    Cost();
-    totalPlusTax();
-    tax();
-  });
-}
-
-function changeButton(cartChange, cartSelector, cartSave) {
-  cartChange.addEventListener("click", () => {
-    cartChange.style.display = "none";
-    cartSelector.style.visibility = "visible";
-    cartSave.style.display = "block";
-  });
-}
-/*===========================Cost and Total function===========================*/
-function Cost() {
-  let total = 0;
-  const cost = document.querySelector(".cost");
-  cart.forEach((product) => {
-    total += product.price * product.quantity;
-  });
-  const costNumber = Number(total);
-  cost.textContent = `$${costNumber.toFixed(2)}`;
-  return costNumber;
-}
-function totalPlusTax() {
-  const totalWithTax = document.querySelector(".total");
-  let totalAmount = 0;
-  let total = Cost();
-  let tax = total * 0.1;
-  let totalPlusTax = total + tax;
-  totalAmount = Number(totalPlusTax);
-  totalWithTax.textContent = `$${totalAmount.toFixed(2)}`;
-}
-function tax() {
-  const tax = document.querySelector(".tax");
+/*=========================== Total function===========================*/
+function totalAmount() {
+  let totalPrice = 0;
+  const totalSpan = document.querySelector(".total-price");
+  const totalAmountDiv = document.querySelector(".totalAmount");
   if (cart.length === 0) {
-    tax.textContent = "0%";
-  } else {
-    tax.textContent = "10%";
+    totalAmountDiv.style.display = "none";
+    return;
   }
+  const total = document.querySelectorAll(".total");
+  total.forEach((product) => {
+    totalPrice += Number(product.textContent.slice(1));
+  });
+  totalSpan.innerHTML = `$${totalPrice.toFixed(2)}`;
 }
+
 /*===========================Checkout functions===========================*/
 
-function clearCart() {
-  cart.length = 0;
-  saveStorage();
-  displayCart();
-}
-
 function checkoutButton() {
-  const checkoutButton = document.querySelector(".purchase");
+  const checkoutButton = document.querySelector(".finish-order-button");
+  if (cart.length === 0) {
+    checkoutButton.style.display = "none";
+  }
   checkoutButton.addEventListener("click", () => {
-    if (cart.length === 0) {
-      return;
-    }
     cart.forEach((cartItem) => {
       const existing = orders.find((order) => order.name === cartItem.name);
       if (existing) {
@@ -192,15 +171,16 @@ function checkoutButton() {
     });
     saveOrders();
     clearCart();
-    Cost();
-    totalPlusTax();
-    tax();
-    const container = document.getElementById("items");
-    container.innerHTML = "Thank you for your Purchase";
-    container.style.color = "green";
-    setTimeout(() => {
-      container.style.color = "red";
-      container.innerHTML = "Your cart is empty";
-    }, 2000);
+    window.location.href = "orders.html";
   });
+}
+
+function clearCart() {
+  cart.length = 0;
+  saveStorage();
+  const cartContainer = document.querySelector(".products");
+  cartContainer.innerHTML = "";
+  checkoutButton();
+  displayCart();
+  totalAmount();
 }

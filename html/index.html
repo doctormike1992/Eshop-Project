@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eshop</title>
     <!----------Icons-------------->
-    <script
-      src="https://kit.fontawesome.com/9a7d107c7e.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!----------CSS-------------->
     <link rel="stylesheet" href="/css/eshop.css" />
   </head>
   <body>
-    <div class="wrapper">
+    
       <header id="head">
-        <!----------Categories button - Dropdown categories & subcategories-------------->
-        <!-- Eshop name -->
         <div class="shopLogo">
           <a href="index.html">
             <h1>E-<i class="fa-brands fa-shopify fa-bounce"></i>hop</h1>
@@ -24,12 +19,19 @@
         </div>
         <div id="inputDiv">
           <!----------Categories button-------------->
-          <button class="barMenu">
-            <i class="fa-solid fa-bars" id="bar"></i>
-          </button>
+          <label class="barMenu">
+            <!-- <i class="fa-solid fa-bars" id="bar"></i> -->
+             <input type="checkbox" id="bar" />
+          </label>
+          
           <!----------Input search-------------->
-          <div id="search">
-            <input type="search" id="search" placeholder="search..." />
+          <div class="search bigSearch">
+            <label class="glass">
+              <i class="fa-solid fa-search"></i>
+              <input type="checkbox" id="glass" />
+            </label>
+            
+            <input type="search" class="searchInput"  placeholder="search..." />
           </div>
         </div>
         <!----------Menu-------------->
@@ -42,7 +44,7 @@
           </div>
         </div>
           <ul>
-            <li><a href="index.html"><i class="fa-regular fa-heart"></i><p>faforites</p></a>
+            <li><a href="favorite.html"><i class="fa-regular fa-heart"></i><p>faforites</p></a>
             <span class="span">favorites</span>
             </li>
             
@@ -57,12 +59,14 @@
           </ul>
         </div>
       </header>
-      
+      <div class="search smallSearch">
+            <input type="search"   placeholder="search..." />
+        </div>
         <nav>
         <div class="dropdown">
           <ul class="main-menu">
             <li><a class="category clothes" data-category="Clothes"><i class="fa-solid fa-shirt"></i>
-              <p>Clothes</p><p>></p></a>
+              <p>Clothes</p></a>
             <div class="sub-menu sub-clothes">
               <ul>
                  <li><a class="category" data-category="T-Shirts">t-shirts</a></li>
@@ -74,7 +78,7 @@
           </li>
 
             <li><a class="category shoes" data-category="Shoes"><i class="fa-solid fa-shoe-prints"></i>
-              <p>Shoes</p><p>></p> </a>
+              <p>Shoes</p> </a>
              <div class="sub-menu sub-shoes">
               <ul>
                  <li><a class="category" data-category="Casual">Casual</a></li>
@@ -86,7 +90,7 @@
             </li>
 
             <li><a class="category furniture" data-category="Furniture"><i class="fa-solid fa-couch"></i>
-              <p>Furniture</p><p>></p> </a>
+              <p>Furniture</p> </a>
               <div class="sub-menu sub-furniture">
               <ul>
                  <li><a class="category" data-category="Chairs">Chairs</a></li>
@@ -98,7 +102,7 @@
             </li>
             
             <li><a class="category tech" data-category="Tech"><i class="fa-solid fa-microchip"></i>
-              <p>Tech</p><p>></p></a>
+              <p>Tech</p></a>
                <div class="sub-menu sub-tech">
               <ul>
                  <li><a class="category" data-category="TV">TV</a></li>
@@ -110,7 +114,7 @@
             </li>
 
             <li><a class="category appliance" data-category="Appliance"><i class="fa-solid fa-blender-phone"></i>
-              <p>Appliance</p><p>></p></a>
+              <p>Appliance</p></a>
               
                <div class="sub-menu sub-appliance">
               <ul>
@@ -123,8 +127,11 @@
             </div>
             </li>
 
-            <li><a class="category" data-category="On-Sale"><i class="fa-solid fa-percent"></i>
-              <p>On sale</p><p></p></a></li>
+            <li><a class="category on-sale" data-category="On-Sale"><i class="fa-solid fa-percent"></i>
+              <p>On sale</p></a></li>
+
+               <li><a class="category best-seller" data-category="Best-Seller"><i class="fa-solid fa-award"></i>
+              <p>Best Seller</p></a></li>
           </ul>
           </div>
           </nav>
@@ -136,9 +143,39 @@
         <span class="cartIcon"><i class="fa-solid fa-basket-shopping"></i></i></span>
         <span class="cartQuantity"></span>
       </a>
-
+      <section>
+        <div class="loader">
+          <div>
+            <div class="loader-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h1>FREE SHIPING</h1>
+            <h4>FOR ORDERS MORE THAN $50</h4>
+          </div>
+          <div>
+            <div class="loader-icon"><i class="fa-solid fa-phone"></i></div>
+            <h1>210-7741234</h1>
+            <h1>210-7744321</h1>
+            <h4>PHONE NUMBER</h4>
+          </div>
+          <div>
+            <div class="loader-icon"><i class="fa-regular fa-credit-card"></i></div>
+            <h1>SAFE TRANSACTION</h1>
+            <h4>CREDIT/DEBIT CARD/PAYPAL</h4>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="social">
+          <div>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </div>
+      </section>
       <!----------Footer-------------->
-      <footer>
+      <!-- <footer>
         <div class="contact">
           <p>Contact us</p>
           <p>Policy</p>
@@ -150,8 +187,58 @@
           <span><i class="fa-brands fa-instagram"></i></span>
           <span><i class="fa-brands fa-x-twitter"></i></span>
         </div>
-      </footer>
-    </div>
+      </footer> -->
+    <footer>
+      <div class="footer">
+          <div class="footer-content">
+            <div class="footer-div">
+              <h3>TERMS OF USE</h3>
+              <ul>
+                <li>Personal Data</li>
+                <li>Privacy Statement</li>
+                <li>Copyrights</li>
+                <li>Disclaimer/Limitation of Liability</li>
+                <li>Cookies Notice</li>
+                <li>Contest Terms</li>
+                <li>Terms of Use</li>
+              </ul>
+            </div>
+            <div class="footer-div">
+              <h3>SHOPPING POLICY</h3>
+              <ul>
+                <li>Transaction Security</li>
+                <li>Payment Methods</li>
+                <li>Shipping Methods</li>
+                <li>Order Cancellation</li>
+                <li>Product Returns</li>
+              </ul>
+            </div>
+            <div class="footer-div">
+              <h3>FRANCHISE</h3>
+              <ul>
+                <li>Join the Franchise Network</li>
+                <li>Become a Wholesale Partner</li>
+              </ul>
+            </div>
+            <div class="footer-div">
+              <h3>INFORMATION</h3>
+              <ul>
+                <li>Stores</li>
+                <li>Contact</li>
+                <li>Help - Questions</li>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Service</li>
+                <li>Apple 16 Series</li>
+              </ul>
+            </div>
+          </div>
+        <div class="footer-bottom">
+          <img src="https://www.themrgadget.gr/images/design/cards_icons.svg">
+        <img src="https://www.themrgadget.gr/images/design/revolute.svg">
+        </div>
+      </div>
+    </footer>
 
     <!----------Script-------------->
     <script type="module" src="/js/eshop.js"></script>
