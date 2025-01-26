@@ -64,6 +64,7 @@ h1 {
 }
 #menu ul p{
   font-size: 15px;
+  padding-top: 0.4rem;
 }
 #menu a {
   text-decoration: none;
@@ -72,6 +73,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 #menu ul span{
   color:white;
@@ -171,8 +173,8 @@ nav ul{
 .barMenu::after,
 .barMenu input{
  content: '';
- width: 50px;
- height: 7px;
+ width: 40px;
+ height: 5px;
  background-color: white;
  border-radius: 999px;
  transition: opacity 0.3s ease, width 0.3s ease, transform 0.3s ease;
@@ -181,7 +183,7 @@ nav ul{
 .barMenu{
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 6px;
   width: max-content;
   z-index: 10;
   cursor: pointer;
@@ -202,12 +204,12 @@ nav ul{
   width: 0;
 }
 .barMenu:has(input:checked)::before{
-  width: 45px;
-  transform: rotate(-45deg);
+  width: 29px;
+  transform: rotate(-50deg);
 }
 .barMenu:has(input:checked)::after{
-  width: 45px;
-  transform:  rotate(45deg);
+  width: 29px;
+  transform:  rotate(50deg);
 }
 #bar {
   font-size: 35px;
@@ -221,7 +223,7 @@ nav ul{
 }
  .dropdown{
  width: 100%;
- height: 30%;
+ height: 330px;
  display: none;
  z-index: 10;
  background-color: white;
@@ -377,7 +379,6 @@ nav li:hover .sub-menu{
   align-items: start;
   justify-content: start;
   text-align: center;
-
 }
 }
 /*======PRODUCTS=======*/
