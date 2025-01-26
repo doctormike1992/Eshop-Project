@@ -22,5 +22,5 @@ witch you can spectate them in another page
 ### Products are added from the main or the 'favorites' page to the cart
 where they are displaid with their price plus taxes and a total price of the cart
 
-### after the cart the producta are added to the 'orders' page
+### after the cart the products are added to the 'orders' page
 where it says what your orders are,the date the order was made and the delivery date
