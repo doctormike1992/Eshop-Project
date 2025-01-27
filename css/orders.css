@@ -64,6 +64,7 @@ h1 {
 }
 #menu ul p {
   font-size: 15px;
+  padding-top: 0.4rem;
 }
 #menu a {
   text-decoration: none;
