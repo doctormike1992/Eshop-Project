@@ -321,7 +321,9 @@ nav li:hover .sub-menu{
   }
 }
 @media (max-width: 860px) {
- 
+ .cart {
+  display: none;
+ }
   #menu p{
     display: none;
   }
@@ -678,7 +680,7 @@ nav li:hover .sub-menu{
 .cart {
   position: fixed;
   bottom: 10%;
-  right: 3%;
+  right: 4%;
   border: 3px solid #FF6A00;
   border-radius: 50px;
   padding: 12px 6px;
