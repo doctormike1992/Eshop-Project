@@ -629,20 +629,8 @@ nav li:hover .sub-menu{
   border-color: #FF6A00;
 }
 /*========Footer=========*/
-footer{
-  width: 100%;
-}
 .footer{
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background: #efefef;
-}
-.footer-content{
-    display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
@@ -654,18 +642,17 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: start;
   gap: clamp(10px, 3vw, 100px);
   text-align: center;
   margin-top: 3rem;
-
 }
 .footer-content h3{
-  font-size: clamp(0.5rem, 3vw, 1.5rem);
   color: #FF6A00;
 }
 .footer-div ul li{
-  font-size: clamp(0.5rem, 3vw, 1rem);
+  font-size: 1rem;
   color: #4D4D4D;
   text-decoration: none;
   list-style: none;

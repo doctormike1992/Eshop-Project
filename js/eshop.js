@@ -64,6 +64,8 @@ function categorySearch() {
     if (!clickedA) return;
     selectedCategory = clickedA.getAttribute("data-category");
     productsContainer.innerHTML = "";
+    
+   
 
     const alphaBet = [...products].sort((a, b) => a.name.localeCompare(b.name));
     alphaBet.forEach((product) => {

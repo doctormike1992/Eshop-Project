@@ -653,17 +653,17 @@ nav li:hover .sub-menu{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: start;
   gap: clamp(10px, 3vw, 100px);
   text-align: center;
   margin-top: 3rem;
 }
 .footer-content h3{
-  font-size: clamp(0.5rem, 3vw, 1.5rem);
   color: #FF6A00;
 }
 .footer-div ul li{
-  font-size: clamp(0.5rem, 3vw, 1rem);
+  font-size: 1rem;
   color: #4D4D4D;
   text-decoration: none;
   list-style: none;
@@ -704,3 +704,8 @@ nav li:hover .sub-menu{
   color: #FF6A00;
   font-weight: bold;
 } 
+@media (max-width: 860px) {
+ .cart {
+  display: none;
+ }
+}
