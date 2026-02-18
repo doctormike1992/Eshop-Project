@@ -56,7 +56,6 @@ h1 {
 }
 
 #menu ul li {
-  /* margin-right: clamp(18px, 3vw, 80px); */
   font-size: clamp(15px, 3vw, 22px);
   display: flex;
   flex-direction: column;
