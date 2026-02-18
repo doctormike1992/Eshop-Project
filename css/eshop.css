@@ -176,8 +176,8 @@ nav ul{
 .barMenu::after,
 .barMenu input{
  content: '';
- width: clamp(20px,2vw,40px);
- height: 5px;
+ width: clamp(20px,3vw,40px);
+ height: clamp(1px,1vw,5px);
  background-color: white;
  border-radius: 999px;
  transition: opacity 0.3s ease, width 0.3s ease, transform 0.3s ease;
@@ -203,7 +203,8 @@ nav ul{
   
 
 }
-.barMenu input:checked{
+@media (min-width: 1024px){
+  .barMenu input:checked{
   opacity: 0;
   width: 0;
 }
@@ -215,6 +216,8 @@ nav ul{
   width: 29px;
   transform:  rotate(50deg);
 }
+}
+
 #bar {
   font-size: 35px;
   margin-right: 0.5em; 
@@ -224,6 +227,7 @@ nav ul{
   justify-content: center;
   align-items: center;
   position: relative;
+  width: max-content;
 }
  .dropdown{
  width: 100%;
@@ -316,9 +320,6 @@ nav li:hover .sub-menu{
   display: block;
 }
 /* RESPOSIVE */
-/* @media  (max-width: 768px) {
-  
-} */
 @media (max-width: 1151px) {
   .phone-numbers{
     display: none;
@@ -336,22 +337,8 @@ nav li:hover .sub-menu{
   }
   .barMenu{
     position: relative;
-    gap: 6px;
+    gap: 3px;
   }
-.barMenu::before,
-.barMenu::after,
-.barMenu input{
-  width: 40px;
-  height: 5px;
-}
-.barMenu:has(input:checked)::before{
-  width: 29px;
-  transform: rotate(-50deg);
-}
-.barMenu:has(input:checked)::after{
-  width: 29px;
-  transform:  rotate(50deg);
-}
   .glass{
     display: block;
     position: relative;
